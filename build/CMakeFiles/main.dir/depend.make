@@ -21,6 +21,7 @@ CMakeFiles/main.dir/main.cpp.o: ../const.h
 CMakeFiles/main.dir/main.cpp.o: ../curve.h
 CMakeFiles/main.dir/main.cpp.o: ../main.cpp
 CMakeFiles/main.dir/main.cpp.o: ../object.h
+CMakeFiles/main.dir/main.cpp.o: ../ppm.h
 CMakeFiles/main.dir/main.cpp.o: ../raytracer.h
 CMakeFiles/main.dir/main.cpp.o: ../scene.h
 
@@ -39,6 +40,7 @@ CMakeFiles/main.dir/ppm.cpp.o: ../curve.h
 CMakeFiles/main.dir/ppm.cpp.o: ../object.h
 CMakeFiles/main.dir/ppm.cpp.o: ../ppm.cpp
 CMakeFiles/main.dir/ppm.cpp.o: ../ppm.h
+CMakeFiles/main.dir/ppm.cpp.o: ../raytracer.h
 CMakeFiles/main.dir/ppm.cpp.o: ../scene.h
 
 CMakeFiles/main.dir/raytracer.cpp.o: ../bmp.h

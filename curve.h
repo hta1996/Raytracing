@@ -12,6 +12,7 @@
 #include "const.h"
 #include "common.h"
 #include <vector>
+#include <cstring>
 using namespace std;
 
 struct Poly

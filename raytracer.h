@@ -14,6 +14,7 @@
 #include<iostream>
 #include<string>
 #include<cmath>
+#include <cstring>
 using namespace std;
 
 class Raytracer

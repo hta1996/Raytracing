@@ -22,6 +22,7 @@ CMakeFiles/main.dir/main.cpp.o
  /Users/apple/Desktop/hta/Courses/2017Autumn/图形学/hw2/Raytracing/Raytracing/curve.h
  /Users/apple/Desktop/hta/Courses/2017Autumn/图形学/hw2/Raytracing/Raytracing/main.cpp
  /Users/apple/Desktop/hta/Courses/2017Autumn/图形学/hw2/Raytracing/Raytracing/object.h
+ /Users/apple/Desktop/hta/Courses/2017Autumn/图形学/hw2/Raytracing/Raytracing/ppm.h
  /Users/apple/Desktop/hta/Courses/2017Autumn/图形学/hw2/Raytracing/Raytracing/raytracer.h
  /Users/apple/Desktop/hta/Courses/2017Autumn/图形学/hw2/Raytracing/Raytracing/scene.h
 CMakeFiles/main.dir/object.cpp.o
@@ -40,6 +41,7 @@ CMakeFiles/main.dir/ppm.cpp.o
  /Users/apple/Desktop/hta/Courses/2017Autumn/图形学/hw2/Raytracing/Raytracing/object.h
  /Users/apple/Desktop/hta/Courses/2017Autumn/图形学/hw2/Raytracing/Raytracing/ppm.cpp
  /Users/apple/Desktop/hta/Courses/2017Autumn/图形学/hw2/Raytracing/Raytracing/ppm.h
+ /Users/apple/Desktop/hta/Courses/2017Autumn/图形学/hw2/Raytracing/Raytracing/raytracer.h
  /Users/apple/Desktop/hta/Courses/2017Autumn/图形学/hw2/Raytracing/Raytracing/scene.h
 CMakeFiles/main.dir/raytracer.cpp.o
  /Users/apple/Desktop/hta/Courses/2017Autumn/图形学/hw2/Raytracing/Raytracing/bmp.h

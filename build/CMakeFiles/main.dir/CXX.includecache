@@ -67,6 +67,8 @@ iostream
 -
 raytracer.h
 /Users/apple/Desktop/hta/Courses/2017Autumn/图形学/hw2/Raytracing/Raytracing/raytracer.h
+ppm.h
+/Users/apple/Desktop/hta/Courses/2017Autumn/图形学/hw2/Raytracing/Raytracing/ppm.h
 ctime
 -
 
@@ -117,6 +119,8 @@ thread
 /Users/apple/Desktop/hta/Courses/2017Autumn/图形学/hw2/Raytracing/Raytracing/ppm.h
 object.h
 /Users/apple/Desktop/hta/Courses/2017Autumn/图形学/hw2/Raytracing/Raytracing/object.h
+raytracer.h
+/Users/apple/Desktop/hta/Courses/2017Autumn/图形学/hw2/Raytracing/Raytracing/raytracer.h
 
 /Users/apple/Desktop/hta/Courses/2017Autumn/图形学/hw2/Raytracing/Raytracing/raytracer.cpp
 raytracer.h
