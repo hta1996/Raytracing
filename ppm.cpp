@@ -10,6 +10,8 @@
 #include "ppm.h"
 #include <mutex>
 #include <thread>
+#include <algorithm>
+using namespace std;
 
 void Photontracer::emit(int photonT)
 {
