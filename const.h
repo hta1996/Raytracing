@@ -32,7 +32,7 @@ namespace Const {
     const int antiAliasingT=4;
     const int hashseed=1000000007;
     const int iterationT=20;
-    const int threadT=6;
+    const int threadT=15;
     const double initr2=0.05;
     const double alpha=2.0/3;
     const int ppmIterT=1500;
