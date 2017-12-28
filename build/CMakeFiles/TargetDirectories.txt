@@ -1,0 +1,3 @@
+/Users/apple/Desktop/hta/Courses/2017Autumn/图形学/hw2/Raytracing/Raytracing/build/CMakeFiles/rebuild_cache.dir
+/Users/apple/Desktop/hta/Courses/2017Autumn/图形学/hw2/Raytracing/Raytracing/build/CMakeFiles/edit_cache.dir
+/Users/apple/Desktop/hta/Courses/2017Autumn/图形学/hw2/Raytracing/Raytracing/build/CMakeFiles/main.dir
