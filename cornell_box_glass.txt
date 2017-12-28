@@ -1,12 +1,11 @@
 background
 	ambientcolor: 0.050000 0.050000 0.050000
 end
-
 camera
 	aperture: 0.05
 	eye: 0.000000 -3.0000000 0.800000
 	lookat: 0.000000 0.000000 0.800000
-	focal: 2.4
+	focal: 4
 	fovy: 45.0
 	h: 1080
 	up: 0.000000 0.000000 1.000000

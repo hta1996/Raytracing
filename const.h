@@ -24,18 +24,18 @@ namespace Const {
     const double PHONG_expo=50;
     const int softShadowT=5;
     const double output_refresh_interval=10.0;
-    const int depth_of_field_samples=16;
+    const int depth_of_field_samples=30;
     const int maxRaytracingDepth=18;
     const int maxPhotontracingDepth=10;
     const bool enable_fresnel=false;
     const double raytracing_min_weight=0.04;
-    const int antiAliasingT=4;
+    const int antiAliasingT=5;
     const int hashseed=1000000007;
-    const int iterationT=20;
-    const int threadT=15;
+    const int iterationT=21;
+    const int threadT=50;
     const double initr2=0.05;
     const double alpha=2.0/3;
-    const int ppmIterT=1500;
+    const int ppmIterT=15000;
     const int emitPhotonT=10000;
     inline int randUInt()
     {
