@@ -35,6 +35,7 @@ public:
         {
             hash[i]=new int[H],vis[i]=new bool[H];
             memset(vis[i],0,H);
+            //
         }
     }
     virtual void Run(const std::string &file);
