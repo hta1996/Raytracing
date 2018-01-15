@@ -55,7 +55,7 @@ void Raytracer::antiAliasing()
     for(int i=0;i<W-1;i++)
         for(int j=0;j<H-1;j++)
         {
-            if(!j&&i%10==0)cerr<<"Smoothing: column " << i <<endl;
+            //if(!j&&i%10==0)cerr<<"Smoothing: column " << i <<endl;
             //if ((i==0||hash[i][j]==hash[i-1][j])&&(i==H-1||hash[i][j]==hash[i+1][j])&&
                 //(j==0||hash[i][j]==hash[i][j-1])&&(j==W-1||hash[i][j]==hash[i][j+1]))continue;
             if(hash[i][j]==hash[i+1][j+1]&&hash[i+1][j]==hash[i][j+1])continue;
@@ -65,8 +65,11 @@ void Raytracer::antiAliasing()
                 if(!vis[x][y])vis[x][y]=1,a.push_back(make_pair(x,y));
             }
         }
+    cerr<<a.size()<<endl;
+    int cntt=0;
     for(auto p:a)
     {
+        if(++cntt%1000==0)cerr<<cntt<<endl;
         int X=p.first,Y=p.second;
         vector<pair<double, double>> b;
         int T=Const::antiAliasingT;

@@ -30,7 +30,7 @@ void Photontracer::emit(int photonT)
                 {
                     photonTracing(itr->emit(powerT),1);
                     lock.lock();
-                    if(++tot%500==0)
+                    if(++tot%50000==0)
                         cout << "Emitted " << tot << " photons." << std::endl;
                     lock.unlock();
                 }
