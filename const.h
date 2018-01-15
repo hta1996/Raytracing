@@ -24,7 +24,7 @@ namespace Const {
     const double PHONG_expo=50;
     const int softShadowT=5;
     const double output_refresh_interval=10.0;
-    const int depth_of_field_samples=1;
+    const int depth_of_field_samples=16;
     const int maxRaytracingDepth=20;
     const int maxPhotontracingDepth=10;
     const bool enable_fresnel=false;
