@@ -37,11 +37,11 @@ void Raytracer::Run(const std::string &file)
             camera->print(file.c_str());
         }*/
     }
-    camera->print(file.c_str());
+    camera->print(("RT"+file).c_str());
     if(Const::antiAliasingT)
     {
         antiAliasing();
-        camera->print(file.c_str());
+        camera->print(("Smooth"+file).c_str());
     }
 }
 
@@ -55,6 +55,7 @@ void Raytracer::antiAliasing()
     for(int i=0;i<W-1;i++)
         for(int j=0;j<H-1;j++)
         {
+            if(!j&&i%10==0)cerr<<"Smoothing: column " << i <<endl;
             //if ((i==0||hash[i][j]==hash[i-1][j])&&(i==H-1||hash[i][j]==hash[i+1][j])&&
                 //(j==0||hash[i][j]==hash[i][j-1])&&(j==W-1||hash[i][j]==hash[i][j+1]))continue;
             if(hash[i][j]==hash[i+1][j+1]&&hash[i+1][j]==hash[i][j+1])continue;

@@ -24,8 +24,8 @@ int main(int argc, const char * argv[]) {
     clock_t T=clock();
     //Raytracer *raytracer=new Raytracer("cornell_box.txt");
     //raytracer->Run("cornell_box.bmp");
-    ppm *ppmtracer=new ppm("../cornell_box_glass.txt");
-    ppmtracer->Run("cornell_box_glass.bmp");
+    ppm *ppmtracer=new ppm("../scene1.txt");
+    ppmtracer->Run("scene1.bmp");
     cerr<<(clock()-T)/CLOCKS_PER_SEC<<endl;
     return 0;
 }

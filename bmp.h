@@ -50,8 +50,17 @@ public:
     ~Bmp();
     int geth(){return H;}
     int getw(){return W;}
-    Color getCol(int i,int j)const{return Color(a[i][j].r,a[i][j].g,a[i][j].b)/255.;}
-    Color getCol(double i,double j)const{i*=W-1;j*=H-1;return getCol(int(i+0.5),int(j+0.5));}
+    Color getCol(int i,int j)const{if(i<0)i=0;if(j<0)j=0;return Color(a[i][j].r,a[i][j].g,a[i][j].b)/255.;}
+    Color getCol(double i,double j)const
+    {
+        i*=W-1;j*=H-1;
+        //return getCol(int(i+0.5),int(j+0.5));
+        int u1=floor(i+Const::eps),v1=floor(j+Const::eps),u2=u1+1,v2=v1+1;
+        double ru=u2-i,rv=v2-j;
+        if(u1<0)u1=W-1;if(v1<0)v1=H-1;
+        if(u2==W)u2=0;if(v2==H)v2=0;
+        return getCol(u1,v1)*(ru*rv)+getCol(u1,v2)*(ru*(1-rv))+getCol(u2,v1)*((1-ru)*rv)+getCol(u2,v2)*((1-ru)*(1-rv));
+    }
 
     void setCol(int i,int j,const Color &col)
     {

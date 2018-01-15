@@ -237,8 +237,6 @@ private:
 class RotationBody:public Primitive
 {
 public:
-    //RotationBody(const Vec& o, const Curve &curves={}, const Material* m = nullptr);
-    //RotationBody(const Json::Value& object);
     RotationBody():Primitive(){h=r=0;cur.clear();textR.clear();stextR.clear();subCylinders.clear();sample.clear();}
     ~RotationBody()
     {
@@ -304,13 +302,21 @@ public:
     }
     virtual Color textureColor(const Collider &tp)const override
     {
+        if(material->hasTexture())
+        {
+            int i=tp.u;
+            double u=fmod(tp.v-ang+4*Const::pi,2*Const::pi)/2/Const::pi;
+            double v=1-(stextR[i]+(tp.u-i)*textR[i]);
+            return material->textureColor(u, v);
+        }
         return Color(1,1,1);
     }
     virtual void input(std::string arg,std::stringstream &fin)override
     {
         if(arg=="O:"){O.input(fin);init();}
+        else if(arg=="scale:")fin>>scale;
         else if(arg=="ang:"){fin>>ang;ang=ang/180*Const::pi;}
-        else if(arg=="curve:"){Curve c;c.input(fin);cur.push_back(c);}
+        else if(arg=="curve:"){Curve c;c.input(fin,scale);cur.push_back(c);}
         else if(arg=="ratio:")
             for(auto c:cur)
             {
@@ -326,7 +332,7 @@ private:
     //输入中O作为最后一个参数 ratio 在curve之后输入
     Vec O;                                                // 底面中心点
     vector<Curve> cur;                                            // 曲线
-    double r,h,ang;                                     // 包围圆柱体的底面半径、高，纹理起点极角
+    double r,h,ang,scale;                                     // 包围圆柱体的底面半径、高，纹理起点极角
     vector<double> textR,stextR; // 每个子曲面纹理的比例，比例前缀和
     vector<Cylinder*> subCylinders; // 子旋转面的包围圆柱体
     Cylinder *cylinder;          // 包围圆柱体
@@ -384,7 +390,15 @@ public:
     }
     virtual Photon emit(double pow)const override
     {
-        return Photon(O,Vec(2*Const::rand01()-1,2*Const::rand01()-1,2*Const::rand01()-1).normalize(),color*pow);
+        Vec v;
+        while(1)
+        {
+            v.x=2*Const::rand01()-1;
+            v.y=2*Const::rand01()-1;
+            v.z=2*Const::rand01()-1;
+            if(v.len2()>Const::eps&&v.len2()<1+Const::eps)break;
+        }
+        return Photon(O,v.normalize(),color*pow);
     }
 private:
     Vec O;

@@ -70,9 +70,10 @@ private:
 struct Curve
 {
     //Curve(const Vec2 &p0,const Vec2 &p1,const Vec2 &p2,const Vec2 &p3);
-    void input(std::stringstream &fin)
+    void input(std::stringstream &fin,double s)
     {
         fin>>P0.x>>P0.y>>P1.x>>P1.y>>P2.x>>P2.y>>P3.x>>P3.y;
+        P0.x*=s,P0.y*=s,P1.x*=s,P1.y*=s,P2.x*=s,P2.y*=s,P3.x*=s,P3.y*=s;
         xmin=min(P0.x,min(P1.x,min(P2.x,P3.x)));
         xmax=max(P0.x,max(P1.x,max(P2.x,P3.x)));
         ymin=min(P0.y,min(P1.y,min(P2.y,P3.y)));
