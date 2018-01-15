@@ -27,8 +27,9 @@ end
 primitive plane
 	d: 1
 	color: 1.000000 1.000000 1.000000
-	diff: 0.8
-	spec: 0.1
+	diff: 0.7
+	refl: 0.3
+	spec: 0
 	N: 0.000000 0.000000 1.000000
 	Dx: 2.5000000 0.000000 0.000000
 	Dy: 0.000000 2.5.000000 0.000000
@@ -259,17 +260,17 @@ primitive rotationbody
 	diff: 0.7
 	refl: 0.1
 	refr: 0
-	rindex: 1.5
+	rindex: 0
 	spec: 0.2
 	texture: picture/lamp.bmp
 	O: 2 -4 2.
 end
 
 primitive sphere
-	O: 1.9 -4.3 -0.2
+	O: 0.5 -5.2 -0.2
 	R: 0.8
 	color: 1.000000 1.000000 1.000000
-	absor: 3 3 3
+	absor: 3 3 0
 	diff: 0.0
 	refl: 0.2
 	refr: 0.8
