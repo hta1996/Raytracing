@@ -326,17 +326,39 @@ public:
     }
     // 设置底面中心点
     void setO(const Vec &o){O=o;}
-    // 曲面上一点 P(u, v)
-    Vec P(int i,double u,double v) const;
+    Vec f(int i,double u,double v)const
+    {
+        Vec2 p=cur[i].f(u);
+        return Vec(p.x*cos(v),p.x*sin(v),p.y)+O;
+    }
+    void outputOBJ(const string &file,int s)const
+    {
+        vector<Vec> point;
+        std::vector<std::vector<int>> mesh;
+        double du=1./s,dv=2*Const::pi/s;
+        int n=0;
+        for(int t=0;t<(int)cur.size();t++)
+            for(int i=0;i<=s;i++)
+                for(int j=0;j<=s;j++)
+                {
+                    double u=i*du,v=j*dv;n++;
+                    point.push_back(f(t,u,v));
+                    if(i&&j)mesh.push_back({n-s-2,n-s-1,n,n-1});
+                }
+        FILE* f=fopen(file.c_str(),"w");
+        for(auto p:point)fprintf(f,"v %lf %lf %lf\n",p.x,p.y,p.z);
+        for(auto m:mesh)fprintf(f,"f %d %d %d %d\n",m[0],m[1],m[2],m[3]);
+        fclose(f);
+    }
 private:
     //输入中O作为最后一个参数 ratio 在curve之后输入
-    Vec O;                                                // 底面中心点
-    vector<Curve> cur;                                            // 曲线
-    double r,h,ang,scale;                                     // 包围圆柱体的底面半径、高，纹理起点极角
-    vector<double> textR,stextR; // 每个子曲面纹理的比例，比例前缀和
-    vector<Cylinder*> subCylinders; // 子旋转面的包围圆柱体
-    Cylinder *cylinder;          // 包围圆柱体
-    vector<int> sample;      // 每个子旋转面都有标识符
+    Vec O;
+    vector<Curve> cur;
+    double r,h,ang,scale;// 包围圆柱体的半径、高，纹理起点极角
+    vector<double> textR,stextR; //每个子曲面纹理的比例，比例前缀和
+    vector<Cylinder*> subCylinders; //子旋转面的包围圆柱体
+    Cylinder *cylinder;//包围圆柱体
+    vector<int> sample;
     void init()
     {
         for(auto c:cur)
@@ -349,6 +371,7 @@ private:
         cylinder=new Cylinder(O,r,h);
         double s=0;
         for(double r:textR)stextR.push_back(s),s+=r;
+        outputOBJ("glass2.obj",100);
     }
 };
 

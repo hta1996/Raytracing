@@ -40,19 +40,6 @@ void Light::input(std::string arg, std::stringstream &fin)
     if(arg=="color:")color.input(fin);
     else if(arg=="power:")fin>>power;
 }
-
-/*Collider Arealight::collide(const Ray& ray)const
-{
-    Ray uray=Ray(ray.O,ray.D);
-    double c=N.dot(uray.D);
-    if(fabs(c)<Const::eps)return Collider();
-    double tp=N.dot(O)-N.dot(uray.O),t=tp/c;
-    if(t<Const::eps)return Collider();
-    Vec p=uray.get(t)-O;
-    if (fabs(p.dot(Dx))+Const::eps<Dx.len2()&&fabs(p.dot(Dy))+Const::eps<Dy.len2())
-        return Collider(uray,t,this,this->getSample());
-    else return Collider();
-}*/
 #include <stdio.h>
 #include<string>
 #include<fstream>
@@ -112,9 +99,6 @@ void Scene::createScene(std::string file)
             if(type=="sphere")new_pri=new Sphere;
             if(type=="plane")new_pri=new Plane;
             if(type=="rotationbody")new_pri=new RotationBody;
-            //if ( type == "rectangle" ) new_primitive = new Rectangle;
-            //if ( type == "triangle" ) new_primitive = new Triangle;
-            //if ( type == "polyhedron" ) new_primitive = new Polyhedron;
             addPrimitive(new_pri);
         }else if(obj=="light")
         {
